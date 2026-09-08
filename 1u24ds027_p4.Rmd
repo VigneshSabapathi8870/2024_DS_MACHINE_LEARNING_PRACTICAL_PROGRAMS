@@ -1,0 +1,38 @@
+---
+title: "program 5"
+author: "rithika"
+date: "2026-08-18"
+output: html_document
+---
+
+```{r}
+library(ISLR)
+```
+```{r}
+data("Carseats")
+```
+
+```{r}
+Carseats=data.frame(Carseats)
+```
+```{r}
+?carseats
+```
+```{r}
+View(carseats)
+```
+```{r}
+dim(Carseats)
+```
+```{r}
+coef(Car_model)
+```
+```{r}
+Car_model=lm(Sales~Price+US,data=Carseats)
+summary(Car_model)
+```
+```{r}
+Car_model=lm(Sales~Price+Urban+US,data=Carseats)
+summary(Car_model)
+```
+
