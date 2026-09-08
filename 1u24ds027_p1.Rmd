@@ -1,0 +1,90 @@
+---
+title: "program anto"
+author: "rithika"
+date: "2026-07-04"
+output: html_document
+---
+```{r}
+library(tidyverse)
+library(ISLR)
+library(ISLR2)
+```
+```{r}
+data(Auto)
+view(Auto)
+```
+```{r}
+summary(Auto)
+```
+```{r}
+sapply(Auto[,1:7], range)
+```
+```{r}
+sapply(Auto[,1:7], mean)
+sapply(Auto[,1:7], sd)
+```
+```{r}
+Auto.reduced = Auto[-c(10:84),]
+```
+```{r}
+sapply(Auto.reduced[,1:7], range)
+
+```
+```{r}
+sapply(Auto.reduced[,1:7], mean)
+
+```
+```{r}
+sapply(Auto.reduced[,1:7], sd)
+```
+```{r}
+pairs(Auto[,1:7])
+
+```
+
+
+```{r}
+cor(Auto[,1:7])
+
+```
+```{r}
+data("College")
+```
+```{r}
+View(College)
+```
+```{r}
+summary(College)
+```
+```{r}
+pairs(College[,1:5])
+```
+```{r}
+dim(College)
+```
+```{r}
+Elite=rep("NO",nrow(College))
+Elite[College$top10perc>50]="YES"
+College_df=data.frame(College,Elite)
+```
+```{r}
+summary(College_df)
+```
+```{r}
+str(College_df)
+```
+```{r}
+boxplot(qutstate)
+```
+
+```{r}
+par(mfrow=c(2,2))
+hist(College$Apps, xlim=c(0,25000), xlab ='Applications', main = 'Apps using
+default bin sizes')
+hist(College$Apps, xlim=c(0,25000), breaks=25, xlab = 'Applications', main = 'Apps
+using smaller bin sizes')
+hist(College$Top10perc, breaks=25, xlab = 'Pct. new students from top 10% of H.S.
+class',main='Top10Perc')
+hist(College$Outstate, xlab='Out-of-state tuition',ylab='Amount',main='Outstate')
+```
+
