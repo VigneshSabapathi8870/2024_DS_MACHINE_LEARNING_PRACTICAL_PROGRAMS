@@ -1,0 +1,69 @@
+---
+title: "program1_1U24DS031"
+author: "SD PRASANTH"
+date: "2026-07-10"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+library(ISLR)
+library(ISLR2)
+```
+
+```{r}
+data(College)
+```
+```{r}
+attach(College)
+```
+```{r}
+head(College)
+```
+```{r}
+tail(College)
+```
+```{r}
+str(College)
+```
+```{r}
+summary(College)
+```
+```{r}
+view(College)
+```
+```{r}
+?(College)
+```
+```{r}
+dim(College)
+```
+```{r}
+pairs(College[,1:10])
+```
+```{r}
+plot(College$Private,College$Outstate,Xlab="Privataeuniversity",Ylab="tuition$",col=c("red","green"))
+```
+
+```{r}
+hist(College$Apps,xlab="Application Recieved",main="")
+```
+```{r}
+hist(College$perc.alumni,col=2,xlab="% of alumni who donate",main="")
+```
+```{r}
+hist(College$t.ratio,col=3,breaks=10,xlab="Student/Faculty ratio",main="")
+```
+```{r}
+hist(College$Expend,breaks=100,xlab="Instructional expenditure per student",main="")
+```
+
+
+
+
+
+
+
+
+
+
