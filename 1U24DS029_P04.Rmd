@@ -1,0 +1,49 @@
+---
+title: "program_4"
+author: "SHAFIYA"
+date: "2026-08-18"
+output: html_document
+---
+
+```{r}
+library(ISLR)
+```
+
+```{r}
+data("Carseats")
+```
+
+```{r}
+Carseats=data.frame(Carseats)
+```
+
+```{r}
+?Carseats
+```
+
+```{r}
+View(Carseats)
+```
+
+```{r}
+dim(Carseats)
+```
+
+```{r}
+car_model=lm(Sales~Price+Urban+US,data = Carseats)
+summary(car_model)
+```
+
+```{r}
+coef(car_model)
+```
+
+```{r}
+car_m=lm(Sales~Price+US,data=Carseats)
+summary((car_m))
+```
+
+```{r}
+
+```
+
