@@ -1,0 +1,48 @@
+---
+title: "program-7"
+author: "vijayakumar"
+date: "2026-08-29"
+output: html_document
+---
+
+```{r}
+library(ISLR)
+library(MASS)
+library(tidyverse)
+```
+```{r}
+data("Boston")
+Boston=data.frame(Boston)
+```
+```{r}
+?Boston
+```
+```{r}
+head(Boston)
+tail(Boston)
+```
+
+```{r}
+dim(Boston)
+```
+```{r}
+crim_med=rep(0,nrow(Boston))
+crim_med[Boston$crim>median(Boston$crim)]=1
+Boston=data.frame(Boston,crim_med)
+set.seed(312)
+training_data=sample(nrow(Boston),size=0.75*nrow(Boston))
+length(training_data)
+```
+```{r}
+glm_fit=glm(crim_med~.,data = Boston,subset=train,family = "binomial")
+```
+```{r}
+summary(glm_fit)
+```
+```{r}
+glm_probs=predict(glm_fit,Boston[-train,],type="response")
+glm_pred=rep("No",dim(Boston[-train,])[1])
+glm_pred[glm_probs>0.5]="Yes"
+table(glm_pred, Boston[-train,"crim_med"],dnn = c("Predicted","Actual"))
+```
+
