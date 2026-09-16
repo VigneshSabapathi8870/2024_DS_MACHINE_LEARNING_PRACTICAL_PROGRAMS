@@ -1,0 +1,44 @@
+---
+title: "program 1"
+author: "ml 1"
+date: "2026-07-03"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+library(ISLR)
+library(ISLR2)
+```
+```{r}
+view(College)
+```
+
+```{r}
+?(College)
+```
+
+```{r}
+str(College)
+```
+```{r}
+summary(College)
+```
+```{r}
+pairs(College[1:10])
+```
+```{r}
+plot(College$Private,College$Outstate,xlab="Privateuniverse",ylab="tutionin$",col= c("red","green"))
+```
+```{r}
+Elite=rep("NO",nrow(College))
+Elite[College$Top10perc>50]="Yes"
+Elite=as.factor(Elite)
+College=data.frame(College,Elite)
+```
+
+```{r}
+summary(college$Elite)
+```
+
+

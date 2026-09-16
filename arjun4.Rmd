@@ -1,0 +1,40 @@
+---
+title: "arjun"
+author: "1u24ds008"
+date: "2026-08-10"
+output: html_document
+---
+
+```{r}
+library(ISLR)
+```
+```{r}
+data("Auto")
+auto=data.frame(Auto)
+```
+```{r}
+?Auto
+```
+```{r}
+View(Auto)
+```
+```{r}
+dim(Auto)
+```
+                                                                                                                                                                
+```{r}
+pairs(Auto)
+```
+```{r}
+cor(auto[,-9])
+```
+```{r}
+lm_model=lm(auto$mpg~.-name,data=auto)
+summary(lm_model)
+```
+```{r}
+par(mfrow=c(2,2))
+plot(lm_model)
+```
+                                                                                                                                                                
+                                                                                                                                                                
