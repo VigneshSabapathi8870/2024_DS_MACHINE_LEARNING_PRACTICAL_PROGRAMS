@@ -1,0 +1,39 @@
+---
+title: "program_04"
+author: "pugal"
+date: "2026-08-18"
+output: html_document
+---
+```{r}
+library(ISLR)
+```
+```{r}
+data("Auto")
+View=data.frame(Auto)
+```
+
+```{r}
+?Auto
+```
+
+```{r}
+dim(Auto)
+```
+
+```{r}
+pairs(Auto)
+```
+```{r}
+cor(Auto[,-9])
+```
+```{r}
+lm_model <- lm(mpg ~ ., data = Auto)
+
+summary(lm_model)
+```
+
+```{r}
+par(mflow=c(2,2))
+plot(lm_model)
+```
+
