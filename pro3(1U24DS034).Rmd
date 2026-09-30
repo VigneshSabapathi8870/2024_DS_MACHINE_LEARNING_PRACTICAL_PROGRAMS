@@ -1,0 +1,152 @@
+---
+title: "program 4"
+output: html_document
+date: "2026-08-18"
+---
+
+```{r}
+library(tidyverse)
+```
+
+
+```{r}
+library(MASS)
+```
+
+
+```{r}
+summary(Boston)
+```
+
+
+```{r}
+(model1=lm(crim~zn,data = Boston))
+
+```
+
+
+```{r}
+summary(model1)
+```
+
+
+```{r}
+model1=lm(crim~indus,data = Boston)
+```
+
+
+```{r}
+summary(model1)
+```
+
+
+```{r}
+(model1 = lm(crim~chas,data = Boston))
+```
+
+
+```{r}
+summary(model1)
+```
+
+
+```{r}
+(model1=lm(crim~nox,data = Boston))
+```
+
+
+```{r}
+summary(model1)
+```
+
+```{r}
+(model1 = lm(crim~rm,data = Boston))
+```
+
+
+```{r}
+summary(model1)
+```
+
+
+```{r}
+(model1=lm(crim~age,data = Boston))
+```
+
+
+```{r}
+summary(model1)
+```
+```{r}
+(model1=lm(crim~dis,data = Boston))
+```
+
+
+```{r}
+summary(model1)
+```
+
+
+```{r}
+(model1=lm(crim~rad,data = Boston))
+```
+```{r}
+summary(model1)
+```
+
+
+```{r}
+(model1=lm(medv~tax,data = Boston))
+
+ ```
+ 
+ 
+
+```{r}
+ summary(model1)
+ 
+```
+
+
+```{r}
+(model1=lm(medv~ptratio,data = Boston))
+summary(model1)
+```
+
+
+```{r}
+(model1=lm(crim~lstat,data = Boston))
+summary(model1)
+
+```
+
+
+
+```{r}
+(model1=lm(crim~medv,data = Boston))
+summary(model1)
+
+```
+
+
+
+
+```{r}
+(model1=lm(crim~indus+nox,data = Boston))
+summary(model1)
+
+```
+
+
+```{r}
+(model1=lm(crim~indus+rm+zn,data = Boston))
+summary(model1)
+```
+
+
+```{r}
+(model1=lm(crim~ptratio,data = Boston))
+summary(model1)
+```
+
+

@@ -1,0 +1,138 @@
+---
+title: "program2_1U24DS034"
+output: html_document
+date: "2026-07-10"
+---
+
+```{r}
+library(tidyverse)
+
+```
+
+```{r}
+library(ISLR)
+library(ISLR2)
+```
+
+
+```{r}
+data(Auto)
+```
+
+
+```{r}
+attach(Auto)
+```
+
+
+```{r}
+?Auto
+```
+
+
+```{r}
+view(Auto)
+```
+
+
+```{r}
+dim(Auto)
+```
+
+
+```{r}
+head(Auto)
+```
+
+
+```{r}
+tail(Auto)
+```
+
+```{r}
+summary(Auto)
+```
+
+
+```{r}
+str(Auto)
+```
+
+
+```{r}
+for (i in c(1,3,4,5,6,7) )
+  {
+  print(range(Auto[,i]))
+  
+}
+```
+
+```{r}
+remove = Auto[-c(10:85),]
+```
+
+
+```{r}
+dim(remove)
+```
+
+
+```{r}
+summary(remove)
+```
+```{r}
+for (i in c(1,3,4,5,6,7) )
+  {
+  print(range(remove[,i]))
+  
+}
+```
+
+
+```{r}
+for (i in c(1,3,4,5,6,7) )
+  {
+  print(summary(remove[,i]))
+  
+}
+
+
+```
+
+```{r}
+plot(Auto$horsepower,Auto$mpg)
+```
+
+
+```{r}
+pairs(Auto)
+
+```
+```{r}
+str(Auto)
+```
+
+```{r}
+plot(Auto$name,Auto$mpg)
+```
+
+```{r}
+plot(Auto$origin,Auto$mpg)
+```
+
+
+```{r}
+
+```
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+

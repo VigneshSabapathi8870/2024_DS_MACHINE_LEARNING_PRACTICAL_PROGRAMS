@@ -1,0 +1,83 @@
+---
+title: "program6"
+output: html_document
+date: "2026-08-29"
+---
+```{r}
+library(tidyverse)
+library(MASS)
+
+```
+
+```{r}
+data("Boston")
+```
+
+
+```{r}
+boston=data.frame(Boston)
+```
+
+
+```{r}
+??boston
+```
+
+
+```{r}
+view(boston)
+```
+
+
+```{r}
+dim(boston)
+```
+
+
+```{r}
+crim_med = rep(0,nrow(boston))
+crim_med[boston$crim>median(boston$crim)]=1
+boston = data.frame(boston,crim_med)
+set.seed(312)
+train = sample(nrow(boston),size = 0.75*nrow(boston))
+length(train)
+```
+
+```{r}
+glm_fit = glm(crim_med~.,data = boston,subset = train,family = "binomial")
+```
+
+
+```{r}
+summary(glm_fit)
+```
+
+
+```{r}
+glm_probs = predict(glm_fit,boston[-train, ],type = "response")
+glm_pred = rep("No",dim(boston[-train, ])[1])
+glm_pred[glm_probs > 0.5]="Yes"
+table(glm_pred,boston[-train,"crim_med"], dnn = c("predicted","Actual"))
+
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
