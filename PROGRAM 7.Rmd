@@ -1,0 +1,64 @@
+---
+title: "PROGRAM 7"
+author: "irfan"
+date: "2026-09-30"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+library(ISLR)
+library(ISLR2)
+```
+```{r}
+summary(Auto)
+```
+
+```{r}
+data("Auto")
+view(Auto)
+```
+```{r}
+sapply(Auto[,1:7],range)
+```
+```{r}
+sapply(Auto[,1:7],mean)
+sapply(Auto[,1:7],sd)
+
+```
+```{r}
+Auto.reduced=Auto[-c(10:84),]
+sapply(Auto.reduced[,1:7],range)
+sapply(Auto.reduced[,1:7],mean)
+sapply(Auto.reduced[,1:7],sd)
+```
+```{r}
+pairs(Auto[,1:7],)
+cor(Auto[,1:7])
+```
+```{r}
+data("college")
+view(College)
+dim(College)
+```
+```{r}
+summary(College)
+```
+```{r}
+pairs(College[,1:5])
+```
+
+```{r}
+Elite=rep("No",nrow(College))
+Elite[College$Top10perc>50]="yes"
+Elite=as.factor(Elite)
+College.df=data.frame(College,Elite)
+summary(College.df)
+```
+```{r}
+par(mfrow=c(2,2))
+hist(College$Apps,xlim=c(0,25000),xlab = "Applications",main="Apps using default bin sizes")
+hist(College$Apps,xlim=c(0,25000),breaks=25,xlab = "Applications",main="Apps using smaller bin sizes")
+hist(College$Top10perc,breaks = 25,xlab = "Pct.new students from top 10% of H.S.class",main="Top10perc")
+hist(College$Outstate,xlab = "Out-of-state tuition",ylab = "Amount",main="Outstate")
+```
