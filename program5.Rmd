@@ -1,0 +1,36 @@
+---
+title: "program5"
+output: html_document
+date: "2026-08-18"
+---
+```{r}
+library(ISLR)
+library(tidyverse)
+```
+```{r}
+data("Carseats")
+Carseats=data.frame(Carseats)
+```
+```{r}
+?Carseats
+```
+```{r}
+view(Carseats)
+```
+```{r}
+dim(Carseats)
+```
+```{r}
+car_model=lm(Sales~Price+Urban+US,data=Carseats)
+summary(car_model)
+```
+```{r}
+coef(car_model)
+```
+```{r}
+car_m=lm(Sales~Price+US,data=Carseats)
+summary(car_m)
+```
+
+
+
