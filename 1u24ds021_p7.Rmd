@@ -1,0 +1,53 @@
+---
+title: "PROGRAM7"
+author: "Untitle"
+date: "2026-09-30"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(ISLR)
+```
+```{r}
+library(MASS)
+```
+```{r}
+data("Boston")
+boston1=data.frame(Boston)
+```
+
+```{r}
+view(boston1)
+```
+
+```{r}
+dim(boston1)
+```
+```{r}
+attach(boston1)
+```
+
+```{r}
+crim_med=rep(0,nrow(boston1))
+crim_med[boston1$crim>median(boston1$crim)]=1
+boston1=data.frame(boston1,crim_med)
+set.seed(312)
+training_data=sample(nrow(boston1),size=0.75*nrow(boston1))
+length(training_data)
+```
+```{r}
+glm_fit = glm(crim_med ~ . - crim, data = boston1, subset = training_data, family = "binomial")
+summary(glm_fit)
+```
+```{r}
+glm_probs = predict(glm_fit, boston1[-training_data, ], type = "response")
+glm_pred = rep("No", dim(boston1[-training_data, ])[1])
+glm_pred[glm_probs > 0.5] = "Yes"
+table(glm_pred, boston1[-training_data, "crim_med"], dnn = c("Predicted","Actual"))
+```
+
