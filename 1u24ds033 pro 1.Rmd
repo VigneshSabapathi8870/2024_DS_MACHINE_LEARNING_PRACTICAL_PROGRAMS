@@ -1,0 +1,47 @@
+---
+title: "PRG-1"
+output: html_document
+date: "2026-07-03"
+---
+
+```{r}
+library(tidyverse)
+```
+```{r}
+library(ISLR)
+```
+```{r}
+library(ISLR2)
+```
+
+```{r}
+data("College")
+attach(College)
+```
+```{r}
+view(College)
+```
+```{r}
+dim(College)
+```
+```{r}
+names(College)
+```
+```{r}
+summary(College)
+```
+```{r}
+?College
+```
+
+```{r}
+str(College)
+```
+```{r}
+plot(Outstate,Private)
+```
+
+```{r}
+ggplot(data=College,mapping=aes(Outstate,Private)) + geom_boxplot()
+```
+
