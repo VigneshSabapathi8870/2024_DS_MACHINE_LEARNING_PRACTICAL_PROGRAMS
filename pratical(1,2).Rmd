@@ -1,0 +1,90 @@
+---
+title: "EX-2"
+output: html_document
+date: "2026-07-04"
+---
+
+```{r}
+library(tidyverse)
+```
+```{r}
+library(ISLR)
+library(ISLR2)
+```
+```{r}
+data(Auto)
+```
+```{r}
+summary(Auto)
+```
+```{r}
+str(Auto)
+```
+```{r}
+sapply(Auto[,1:7],range)
+```
+```{r}
+sapply(Auto[,1:7],mean)
+sapply(Auto[,1:7],sd)
+```
+```{r}
+Auto.reduced=Auto[-c(10:84),]
+sapply(Auto.reduced[,1:7],range)
+sapply(Auto.reduced[,1:7],mean)
+sapply(Auto.reduced[,1:7],sd)
+```
+```{r}
+pairs(Auto[,1:7])
+```
+```{r}
+cor(Auto[,1:7])
+```
+```{r}
+ggplot(data = Auto,mapping = aes(mpg,displacement))+geom_point()
+```
+```{r}
+data(College)
+```
+```{r}
+View(College)
+```
+```{r}
+dim(College)
+```
+```{r}
+summary(College)
+```
+```{r}
+pairs(College[,1:5])
+```
+```{r}
+Elite=rep("No",nrow(College))
+Elite[College$Top10perc>50]="Yes"
+College.df=data.frame(College,Elite)
+```
+```{r}
+View(College.df)
+```
+```{r}
+summary(College.df)
+```
+```{r}
+str(College.df)
+```
+```{r}
+boxplot(Outstate~Elite,data=College.df)
+```
+```{r}
+hist(College$Apps,xlim = c(0,25000),xlab = "Applications",main="Apps using default bin sizes")
+```
+```{r}
+hist(College$Apps,xlim = c(0,25000),breaks=25,xlab = "Applications",main="Apps using smaller bin sizes")
+```
+```{r}
+hist(College$Top10perc,breaks=25,xlab = "pct.new studentsfrom top 10%of H.S.class",main="Top10perc")
+```
+```{r}
+hist(College$Outstate,xlab = "Out-of-state tuition",ylab="Amount",main="Outsatatae")
+```
+
+

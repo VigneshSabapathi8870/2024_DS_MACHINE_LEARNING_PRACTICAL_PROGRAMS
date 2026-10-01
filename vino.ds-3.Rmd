@@ -1,0 +1,34 @@
+---
+title: "Ex-1"
+output: html_document
+date: "2026-07-03"
+---
+
+```{r}
+library(tidyverse)
+library(ISLR)
+library(ISLR2)
+```
+
+```{r}
+data(College)
+```
+```{r}
+dim(College)
+```
+```{r}
+?College
+```
+```{r}
+summary(College)
+```
+```{r}
+str(College)
+```
+```{r}
+attach(College)
+ggplot(data=College,mapping=aes(Outstate,Private))+geom_boxplot()
+polt(Outstate,Private,type="boxplot")
+```
+
+
