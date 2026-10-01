@@ -1,0 +1,103 @@
+---
+title: "program_7"
+author: "program"
+date: "2026-09-23"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(ISLR)
+```
+
+```{r}
+data("Smarket")
+```
+
+```{r}
+dim(Smarket)
+```
+```{r}
+summary(Smarket)
+```
+```{r}
+pairs(Smarket)
+```
+```{r}
+cor(Smarket[,-9])
+```
+```{r}
+attach(Smarket)
+plot(Volume)
+```
+```{r}
+glm.fit=glm(Direction~Lag1+Lag2+Lag3+Lag4+Lag5+Volume,data=Smarket,family=binomial) 
+summary(glm.fit)
+```
+```{r}
+coef(glm.fit)
+```
+```{r}
+summary (glm.fit)$coef
+```
+```{r}
+summary (glm.fit)$coef[,4]
+```
+```{r}
+glm.pred=predict (glm.fit ,type="response")
+glm.pred[1:10]
+```
+```{r}
+contrasts(Direction)
+```
+```{r}
+glm.preds=rep("Down" ,1250)
+glm.preds[glm.pred >.5]=" Up"
+```
+
+```{r}
+table(glm.preds,Direction)
+```
+```{r}
+(507+145)/1250
+```
+```{r}
+mean(glm.preds==Direction)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

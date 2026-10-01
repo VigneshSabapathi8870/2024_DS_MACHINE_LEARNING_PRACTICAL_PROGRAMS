@@ -1,0 +1,117 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+library(tidyverse)
+library(ISLR)
+library(ISLR2)
+```
+
+```{r}
+data("Auto")
+view(Auto)
+```
+
+```{r}
+str(Auto)
+```
+
+```{r}
+sapply(Auto[,1:7], range)
+```
+```{r}
+sapply(Auto[,1:7], mean)
+sapply(Auto[,1:7], sd)
+```
+
+```{r}
+Auto_reduce =Auto[-c(10:85)]
+```
+
+```{r}
+view(Auto_reduce)
+```
+
+```{r}
+sapply(Auto_reduce[,1:7], range)
+```
+```{r}
+sapply(Auto_reduce[,1:7], mean)
+
+```
+
+```{r}
+sapply(Auto_reduce[,1:7], sd)
+
+```
+
+```{r}
+pairs(Auto[,1:7])
+```
+
+```{r}
+cor(Auto[,1:7])
+```
+
+```{r}
+data("College")
+view(College)
+```
+
+```{r}
+dim(College)
+```
+```{r}
+summary(College)
+```
+```{r}
+pairs(College[,1:5])
+```
+```{r}
+Elite = rep("NO",nrow(College))
+Elite[College$Top10perc>50]="YES"
+College.df = data.frame(College,Elite)
+```
+
+
+```{r}
+view(College.df)
+```
+
+```{r}
+summary(College.df)
+```
+
+```{r}
+hist(College$Apps,xlim = c(0,2500),xlab = "Applications",main = "Apps using defalut bin size")
+```
+```{r}
+hist(College$Apps,xlim = c(0,2500),breaks = 25,xlab = "Applications",main = "Apps using smaller bin size")
+
+```
+
+```{r}
+hist(College$Top10perc,breaks = 25,xlab = "Pct. new students from top 10% of H.S. class", main = "Top10perc")
+```
+```{r}
+hist(College$Outstate,xlab = "Out-of-state tution",ylab = "Amount",main = "Outstate")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
