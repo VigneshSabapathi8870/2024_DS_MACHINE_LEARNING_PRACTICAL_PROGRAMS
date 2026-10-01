@@ -1,0 +1,90 @@
+---
+title: "1U24DS012"
+author: "EDWIN"
+date: "2026-09-23"
+output: html_document
+---
+```{r}
+train=(Year <2005)
+Smarket.2005= Smarket [!train ,]
+dim(Smarket.2005)
+```
+```{r}
+Direction.2005= Direction [!train]
+```
+
+```{r}
+glm.fit=glm(Direction∼Lag1+Lag2+Lag3+Lag4+Lag5+Volume ,
+data=Smarket ,family=binomial ,subset=train)
+glm.probs=predict (glm.fit ,Smarket.2005, type="response")
+```
+
+```{r}
+glm.pred=rep("Down",252)
+glm.pred[glm.probs >.5]=" Up"
+table(glm.pred ,Direction.2005)
+```
+
+```{r}
+mean(glm.pred==Direction.2005)
+```
+
+```{r}
+mean(glm.pred!=Direction.2005)
+```
+
+```{r}
+glm.fit=glm(Direction∼Lag1+Lag2 ,data=Smarket ,family=binomial ,
+subset=train)
+glm.probs=predict (glm.fit ,Smarket.2005, type="response")
+glm.pred=rep("Down",252)
+glm.pred[glm.probs >.5]=" Up"
+table(glm.pred ,Direction.2005)
+```
+```{r}
+mean(glm.pred==Direction.2005)
+```
+```{r}
+106/(106+76)
+```
+```{r}
+predict (glm.fit ,newdata =data.frame(Lag1=c(1.2 ,1.5),
+Lag2=c(1.1,-0.8) ),type="response")
+```
+
+```{r}
+library(MASS)
+lda.fit=lda(Direction∼Lag1+Lag2 ,data=Smarket ,subset=train)
+lda.fit
+```
+```{r}
+plot(lda.fit)
+```
+
+```{r}
+lda.pred=predict (lda.fit , Smarket.2005)
+names(lda.pred)
+```
+
+```{r}
+lda.class=lda.pred$class
+table(lda.class ,Direction.2005)
+```
+```{r}
+mean(lda.class==Direction.2005)
+```
+
+```{r}
+sum(lda.pred$posterior[,1]>=.5)
+```
+```{r}
+sum(lda.pred$posterior[,1]<.5)
+```
+```{r}
+lda.pred$posterior [1:20,1]
+lda.class [1:20]
+```
+
+```{r}
+sum(lda.pred$posterior[,1]>.9)
+```
