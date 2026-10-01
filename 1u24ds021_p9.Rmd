@@ -1,30 +1,38 @@
 ---
-title: "prgram-9"
-author: "RATHISH"
-date: "2026-09-23"
+title: "program9"
+author: "niru"
+date: "2026-09-30"
 output: html_document
 ---
 
 ```{r}
-train=(Year<2005)
+data("Smarket")
 ```
 ```{r}
-Smarket.2005=Smarket[!train,]
+train=(Year <2005)
+```
+```{r}
+Smarket.2005= Smarket[!train,]
 ```
 ```{r}
 dim(Smarket.2005)
 ```
 ```{r}
-Direction.2005=Direction[!train]
+Direction.2005= Direction[!train]
 ```
-
 ```{r}
-glm.fit=glm(Direction~Lag1+Lag2+Lag3+Lag4+Lag5+Volume,data=Smarket,family=binomial,subset =train)
-glm.probs=predict(glm.fit,Smarket.2005,type="response")
+glm.fit=glm(Direction∼Lag1+Lag2+Lag3+Lag4+Lag5+Volume ,
+data=Smarket ,family=binomial ,subset=train)
+```
+```{r}
+glm.probs=predict (glm.fit ,Smarket.2005, type="response")
 ```
 ```{r}
 glm.pred=rep("Down",252)
-glm.pred[glm.probs>.5]="Up"
+```
+
+```{r}
+glm.pred[glm.probs >.5]="Up"
 table(glm.pred,Direction.2005)
 ```
 ```{r}
@@ -34,25 +42,15 @@ mean(glm.pred==Direction.2005)
 mean(glm.pred!=Direction.2005)
 ```
 ```{r}
-glm.fit=glm(Direction~Lag1+Lag2,data=Smarket.2005,family=binomial,subset=train)
-glm.probs=predict(glm.fit,Smarket.2005,type="response")
-glm.pred=rep("Down",252)
-glm.pred[glm.probs>.5]="Up"
-table(glm.pred,Direction.2005)
-```
-
-```{r}
-mean(glm.pred==Direction.2005)
+mean(glm.pred!=Direction.2005)
 ```
 ```{r}
-predict(glm.fit,newdata = data.frame(Lag1=c(1.2,1.5),Lag2=c(1.1,-0.8)),type = "response")
+106/(106+76)
 ```
-
 ```{r}
-
+predict (glm.fit ,newdata =data.frame(Lag1=c(1.2 ,1.5),
+Lag2=c(1.1,-0.8) ),type="response")
 ```
-
-
 
 
 
