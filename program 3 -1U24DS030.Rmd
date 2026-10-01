@@ -1,0 +1,22 @@
+---
+title: "Program 4"
+output: html_document
+date: "2026-08-18"
+---
+```{r}
+library(MASS)
+summary(Boston)
+```
+
+
+```{r}
+(model1=lm(medv~indus+nox,data=Boston))
+summary(model1)
+```
+
+
+```{r}
+(model1=lm(medv~indus+rm+zn,data=Boston))
+summary(model1)
+```
+

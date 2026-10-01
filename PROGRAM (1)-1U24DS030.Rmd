@@ -1,0 +1,62 @@
+---
+title: "PROGRAM 1"
+output: html_document
+date: "2026-09-08"
+---
+```{r}
+data(College)
+dim(College)
+```
+
+
+```{r}
+summary(College)
+
+```
+
+```{r}
+pairs(College[,1:5])
+```
+
+
+```{r}
+Elite=rep("No",nrow(College))
+Elite[College$Top10per>50]="yes"
+College.df=data.frame(College,Elite)
+```
+
+
+```{r}
+summary(College.df)
+str(College.df)
+```
+
+
+```{r}
+boxplot(Outstate~Elite,data=College.df)
+```
+
+
+```{r}
+hist(College$Apps,xlim=c(0,25000),xlab="applications",main="appas using default bin sizes")
+```
+
+
+```{r}
+hist(College$Apps,xlim=c(0,25000),breaks=25,xlab="applications",main="apps using smaller bin sizes")
+```
+
+
+```{r}
+hist(College$Top10perc,breaks=25,xlab="Pct.new students from top 10% of H.S.class",main="Top10Perc")
+```
+
+
+```{r}
+hist(College$Outstate,xlab="Out-of-state tuition",ylab="amount",main="Outstate")
+```
+
+
+
+```
+

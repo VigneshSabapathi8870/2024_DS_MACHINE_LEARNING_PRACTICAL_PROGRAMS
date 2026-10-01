@@ -1,0 +1,47 @@
+---
+title: "PROGRAM - 6"
+output: html_document
+date: "2026-08-29"
+---
+```{r}
+library(tidyverse)
+library(ISLR)
+library(MASS)
+```
+
+
+```{r}
+data(Boston)
+```
+
+
+```{r}
+view(Boston)
+dim(Boston)
+```
+
+
+```{r}
+crim_med=rep(0,nrow(Boston))
+crim_med[Boston$crim>median(Boston$crim)]=1
+Boston=data.frame(Boston,crim_med)
+crim_med=as.factor(crim_med)
+set.seed(312)
+training_data=sample(nrow(Boston),size=0.75*nrow(Boston))
+length(training_data)
+```
+
+
+```{r}
+glm_fit=glm(crim_med~.,data=Boston,subset=training_data,family="binomial")
+summary(glm_fit)
+```
+
+
+```{r}
+glm_probs=predict(glm_fit,Boston[-training_data,],type="response")
+glm_pred=rep("No",dim(Boston[-training_data,])[1])
+glm_pred[glm_probs>0.5]="Yes"
+table(glm_pred,Boston[-training_data,"crim_med"],dnn=c("Predicted","Actual"))
+```
+
