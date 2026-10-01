@@ -1,0 +1,72 @@
+---
+title: "PRG_2_1U24DS040"
+output: html_document
+date: "2026-07-10"
+---
+
+```{r}
+library(tidyverse)
+library(ISLR)
+library(ISLR2)
+```
+```{r}
+```
+
+
+```{r}
+```
+
+```{r}
+data(College)
+```
+
+```{r}
+dim(College)
+```
+
+```{r}
+?College
+```
+
+```{r}
+summary(College)
+```
+
+```{r}
+str(College)
+```
+```{r}
+attach(College)
+ggplot(data=College,mapping=aes(Outstate,Private))+geom_boxplot()
+plot(Outstate,Private,type="boxplot")
+```
+```{r}
+pairs(College[,1:10])
+```
+
+```{r}
+plot(College$Private,College$Outstate,xlab="privateuniversity",ylab="tutionin$",col=c("red","green"))
+```
+```{r}
+Elite=rep("No",nrow(College))
+Elite[College$Top10perc >50]="yes"
+Elite=as.factor(Elite)
+College=data.frame(College,Elite)
+```
+
+```{r}
+summary(College$Elite)
+```
+
+```{r}
+plot(College$Elite,College$Outstate,xlab="Eliteuniversity",ylab="tutionin$",col=c("red","green"))
+```
+```{r}
+par(mfrow=c(2,2))
+hist(College$Apps,Xlab="Application Received",main="")
+hist(College$perc.alumni,col=2,xlab="% of alumni who donate",main="")
+hist(College$S.F.Ratio,col=3,breaks=10,xlab="Student/Faculty ratio",main="")
+hist(College$Expend,breaks = 100,Xlab="Instructional expenditure per student",main="")
+```
+
+
