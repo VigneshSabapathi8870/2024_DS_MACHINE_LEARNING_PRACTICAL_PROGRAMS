@@ -1,0 +1,47 @@
+---
+title: "Program_7"
+author: "1u24ds026"
+date: "2026-09-08"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(MASS)
+```
+
+```{r}
+data("Boston")
+```
+
+```{r}
+?Boston
+```
+
+```{r}
+dim(Boston)
+```
+```{r}
+view(Boston)
+```
+
+```{r}
+crim_med = rep(0,nrow(Boston))
+crim_med[Boston$crim > median(Boston$crim)] = 1
+boston =data.frame(Boston,crim_med)
+set.seed(321)
+train = sample(nrow(Boston),size=0.75*nrow(Boston))
+length(train)
+
+```
+```{r}
+glm_fit = glm(crim_med~.-crim,data=Boston,subset=training_data,family="binomial")
+summary(glm_fit)
+```
+```{r}
+glm_probs= predict()
+```
+
