@@ -1,33 +1,33 @@
 ---
-title: "program10"
-author: "RATHISH"
-date: "2026-09-23"
+title: "program"
+author: "niru"
+date: "2026-09-30"
 output: html_document
 ---
-
 ```{r}
 library(MASS)
-library(ISLR)
-names(Smarket)
 ```
 ```{r}
-lda.fit=lda(Direction~Lag1+Lag2,data=Smarket,subset = train)
+lda.fit=lda(Direction∼Lag1+Lag2 ,data=Smarket ,subset=train)
 lda.fit
 ```
 ```{r}
-plot(lda.fit)
+lda(Direction ∼ Lag1 + Lag2 , data = Smarket , subset = train)
 ```
 ```{r}
-lda.pred=predict(lda.fit,Smarket.2005)
+lda.pred=predict (lda.fit, Smarket.2005)
+```
+
+```{r}
 names(lda.pred)
+
 ```
 ```{r}
 lda.class=lda.pred$class
 table(lda.class,Direction.2005)
 ```
-
 ```{r}
-mean(lda.class,Dierction.2005)
+mean(lda.class==Direction.2005)
 ```
 ```{r}
 sum(lda.pred$posterior[,1]>=.5)
@@ -36,25 +36,12 @@ sum(lda.pred$posterior[,1]>=.5)
 sum(lda.pred$posterior[,1]<.5)
 ```
 ```{r}
-lda.pred$posterior[1:20,1]
-lda.class[1:20]
+lda.pred$posterior [1:20,1]
+```
+```{r}
+lda.class [1:20]
 ```
 ```{r}
 sum(lda.pred$posterior[,1]>.9)
-```
-```{r}
-qda.fit=qda(Direction~Lag1+Lag2,data=Smarket,subset = train)
-qda.fit
-```
-```{r}
-qda.class=predict(qda.fit,Smarket.2005)$class
-table(qda.class,Direction.2005)
-```
-
-```{r}
-mean(qda.class==Direction.2005)
-```
-```{r}
-
 ```
 
