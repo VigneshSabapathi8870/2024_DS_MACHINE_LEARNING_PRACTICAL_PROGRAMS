@@ -1,0 +1,65 @@
+---
+title: "program2"
+author: "1u24ds028"
+date: "2026-10-08"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+library(ISLR)
+library(ISLR2)
+library(MASS)
+```
+
+```{r}
+data("Carseats")
+attach(Carseats)
+```
+
+```{r}
+view(Carseats)
+```
+
+```{r}
+dim(Carseats)
+```
+```{r}
+str(Carseats)
+```
+```{r}
+?Carseats
+```
+
+```{r}
+model=lm(Sales~Price+Urban+US,data = Carseats)
+```
+
+```{r}
+summary(model)
+```
+```{r}
+coef(model)
+```
+```{r}
+model_2=lm(Sales~Price+US,data=Carseats)
+summary(model_2)
+```
+```{r}
+coef(model_2)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

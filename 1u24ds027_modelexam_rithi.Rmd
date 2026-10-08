@@ -1,0 +1,64 @@
+---
+title: "program_1"
+author: "1u24ds028"
+date: "2026-10-08"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+library(ISLR)
+library(ISLR2)
+library(MASS)
+```
+```{r}
+data("College")
+attach(College)
+```
+
+```{r}
+view(College)
+```
+
+```{r}
+dim(College)
+```
+```{r}
+str(College)
+```
+```{r}
+?College
+```
+
+```{r}
+pairs(College[,1:5])
+```
+```{r}
+Elite=rep("No",nrow(College))
+```
+
+```{r}
+Elite[(College$Top10perc>median(College$Top10perc))]="Yes"
+College_df = data_frame(College,Elite)
+```
+
+```{r}
+table(Elite)
+```
+```{r}
+hist(College_df$Apps,xlab = "Applications Received",main = "")
+hist(College_df$S.F.Ratio,xlab = "Student/facult ratio",main = "")
+hist(College_df$perc.alumni,xlab = "perc alumni",main = "")
+hist(College_df$Expend,xlab = "Instructional expenditure per student",main = "")
+```
+
+
+
+
+
+
+
+
+
+
+
