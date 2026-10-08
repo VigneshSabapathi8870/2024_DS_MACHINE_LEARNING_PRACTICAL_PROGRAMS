@@ -1,0 +1,49 @@
+---
+title: "program2"
+output: html_document
+date: "2026-10-08"
+---
+
+```{r}
+library("tidyverse")
+```
+
+```{r}
+library("ISLR")
+```
+
+```{r}
+library("ISLR2")
+```
+
+```{r}
+str(Auto)
+```
+```{r}
+summary(Auto)
+```
+```{r}
+sapply(Auto[,1:7], range)
+```
+```{r}
+sapply(Auto[,1:7], mean)
+sapply(Auto[,1:7], sd)
+```
+```{r}
+Auto.reduced = Auto[-c(10:84),]
+sapply(Auto.reduced[,1:7], range)
+sapply(Auto.reduced[,1:7], mean)
+sapply(Auto.reduced[,1:7], sd)
+```
+```{r}
+pairs(Auto[,1:5])
+```
+```{r}
+plot(Auto$horsepower,Auto$mpg)
+```
+```{r}
+plot(Auto$origin,Auto$mpg)
+```
+
+
+

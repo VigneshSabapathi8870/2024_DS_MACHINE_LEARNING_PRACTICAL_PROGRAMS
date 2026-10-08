@@ -1,0 +1,56 @@
+---
+title: "program01"
+output: html_document
+date: "2026-10-08"
+---
+```{r}
+library(tidyverse)
+```
+
+```{r}
+library(ISLR)
+```
+
+```{r}
+library(ISLR2)
+```
+
+```{r}
+library(ggplot2)
+```
+
+```{r}
+data("College")
+view(College)
+dim(College)
+
+```
+
+```{r}
+summary(College)
+```
+
+```{r}
+pairs(College[,1:5])
+```
+```{r}
+ggplot(data = College,mapping = aes(Outstate,Private))+geom_boxplot()
+plot(College$Outstate,College$Private)
+```
+
+```{r}
+Elite = rep("NO",nrow(College))
+Elite[College$Top10perc>50] = "Yes"
+College_df = data.frame(College,Elite)
+summary(College_df)
+```
+
+```{r}
+hist(College$Apps,xlim=c(0,25000),xlab="Application",main="Apps using
+default bin sizes")
+hist(College$Apps,xlim=c(0,25000),breaks=25,xlab="Applications",main="Apps
+using smaller bin sizes")
+hist(College$Top10perc,breaks=25,xlab="Pct.new students from top 10% of H.S.class",main="Top10Perc")
+hist(College$Outstate, xlab="Out-of-state tuition",ylab="Amount",main="Outstate")
+```
+
