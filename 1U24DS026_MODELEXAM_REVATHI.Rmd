@@ -1,0 +1,36 @@
+---
+title: "PROGRAM08_1U24DS026"
+author: "REVATHI"
+date: "2026-10-08"
+output: html_document
+---
+
+```{r }
+library(tidyverse)
+library(ISLR)
+library(ISLR2)
+```
+```{r}
+attach(Smarket)
+```
+```{r}
+data("Smarket")
+```
+```{r}
+str(Smarket)
+```
+```{r}
+dim(Smarket)
+```
+```{r}
+summary(Smarket)
+```
+```{r}
+
+head(Smarket)
+tail(Smarket)
+```
+```{r}
+
+```
+
