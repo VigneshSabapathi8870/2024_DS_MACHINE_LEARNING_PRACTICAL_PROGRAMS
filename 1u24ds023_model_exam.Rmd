@@ -1,0 +1,37 @@
+---
+title: "Untitled"
+author: "pugal"
+date: "2026-10-08"
+output: html_document
+---
+```{r}
+library(ISLR)
+```
+```{r}
+data(AUto)
+```
+```{r}
+dim(auto)
+```
+
+```{r}
+str(auto)
+```
+
+```{r}
+?Auto
+```
+```{r}
+summary(auto)
+```
+```{r}
+pairs(Auto)
+```
+```{r}
+cor(Auto[,-9])
+```
+```{r}
+lm_model=lm(mpg ~ .,-na,esdata = Auto)
+```
+
++
