@@ -1,0 +1,45 @@
+---
+title: "Untitled-1"
+author: "niranchana"
+date: "2026-10-08"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+library(ISLR)
+library(ISLR2)
+```
+```{r}
+data("Carseats")
+```
+
+```{r}
+View(Carseats)
+```
+
+```{r}
+dim(Carseats)
+
+```
+```{r}
+summary(Carseats)
+
+```
+```{r}
+attach(Carseats)
+```
+
+```{r}
+pairs(Carseats)
+
+```
+```{r}
+head(Carseats)
+```
+```{r}
+
+```
+
+```
+

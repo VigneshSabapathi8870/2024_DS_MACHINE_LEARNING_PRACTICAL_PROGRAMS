@@ -1,0 +1,36 @@
+---
+title: "Untitled-2"
+author: "niranchana"
+date: "2026-10-08"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+library(ISLR)
+library(ISLR2)
+```
+
+```{r}
+data("Boston")
+```
+
+```{r}
+view(Boston)
+```
+
+```{r}
+dim(Boston)
+```
+```{r}
+summary(Carseats)
+```
+```{r}
+pairs(Boston)
+```
+```{r}
+head(Boston)
+```
+
+
+
