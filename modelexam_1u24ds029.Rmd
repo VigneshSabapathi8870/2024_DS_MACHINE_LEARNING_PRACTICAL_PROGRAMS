@@ -1,0 +1,53 @@
+---
+title: "program1"
+author: "Shafiya"
+date: "2026-10-08"
+output: html_document
+---
+```{r}
+library(tidyverse)
+```
+
+```{r}
+library(ISLR)
+library(ISLR2)
+```
+
+```{r}
+data("College")
+```
+
+
+```{r}
+view(College)
+```
+
+```{r}
+dim(College)
+```
+
+```{r}
+str(College)
+```
+```{r}
+?College
+```
+
+`
+```{r}
+plot(College$Elite,collage$outstate,xlab="Elite university",ylab = "tutions$",col(c."red","blue")
+```
+
+```{r}
+pairs(College)
+```
+```{r}
+Elite=("no"),nrow(College))
+Elite=[College$Top10perc>50]"yes"
+Elite=as.factor(Elite)
+College=data.frame(Elite,College)
+```
+```{r}
+cor(College[c(10:85)])
+```
+

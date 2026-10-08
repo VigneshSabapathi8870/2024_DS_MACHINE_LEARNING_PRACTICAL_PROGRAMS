@@ -1,0 +1,57 @@
+---
+title: "program2"
+author: "Shafiya"
+date: "2026-10-08"
+output: html_document
+---
+
+```{r}
+data("Auto")
+```
+
+```{r}
+view(Auto)
+```
+
+```{r}
+dim(Auto)
+```
+```{r}
+str(Auto)
+```
+
+```{r}
+summary(Auto)
+```
+```{r}
+pairs(Auto)
+```
+```{r}
+model1=lm(Auto$mpg~horsepower,data=Auto)
+```
+```{r}
+summary(model1)
+```
+```{r}
+model1=lm(Auto$mpg~displacement,data=Auto)
+```
+```{r}
+summary(model1)
+```
+
+```{r}
+model1=lm(Auto$mpg~horsepower+cylinders,data=Auto)
+```
+
+```{r}
+summary(model1)
+```
+
+```{r}
+model1=lm(Auto$mpg~horsepower+cylinders+weight,data=Auto)
+
+```
+```{r}
+summary(model1)
+```
+
