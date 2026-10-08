@@ -1,0 +1,76 @@
+```{r}
+```
+
+
+```{r}
+library(tidyverse)
+library(ISLR)
+```
+
+
+```{r}
+data("College")
+```
+
+```{r}
+view(College)
+```
+
+```{r}
+dim(College)
+```
+
+
+```{r}
+??College
+```
+
+
+```{r}
+(plot(College$Private,College$Outstate,xlab=("Privateuniversity"),ylab=("Tuitionin$"),
+      col=c("red","green")))
+```
+
+
+```{r}
+Elite<-rep("No",nrow(College))
+Elite(College$Top10perc > 50)="Yes"
+Elite=data.frame(Elite)
+College=data_frame(College,Elite)
+
+```
+
+
+```{r}
+plot(College$Elite,College$Outstate,xlab=("Eliteuniversity"),ylab=("Tuitionin$"),
+     col=c("red","green"))
+```
+
+
+```{r}
+pairs(College)
+```
+
+
+
+
+```{r}
+pars(College(c=(2,2))
+```
+
+
+```{r}
+hist(College$Apps,xlab("application recevied"),main = "")
+hist(College$perc.alumni,col=2,xlab("% of alumini"),main="")
+hist(College$S.F.Ratio,col=3,breaks=10,xlab("students/faculity ratio"),main="")
+hist(College$Expend,breaks=100,xlab("expendicure"),main="")
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
