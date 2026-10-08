@@ -1,0 +1,41 @@
+---
+title: "PROGRAM 2"
+author: "sri"
+date: "2026-10-08"
+output: html_document
+---
+```{r}
+library(tidyverse)
+library(ISLR)
+library(ISLR2)
+```
+```{r}
+data("Auto")
+```
+```{r}
+attach(Auto)
+```
+```{r}
+view(auto)
+```
+```{r}
+dim(Auto)
+```
+
+```{r}
+str(Auto)
+```
+
+```{r}
+summary(Auto)
+```
+```{r}
+head(Auto)
+```
+```{r}
+tail(Auto)
+```
+```{r}
+plot(Auto)
+```
+
